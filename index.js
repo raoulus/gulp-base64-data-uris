@@ -29,7 +29,7 @@ module.exports = function(targetFilename) {
     cb();
 
   }, function(cb) {
-    gutil.log('image-converion done');
+    gutil.log(`returning ${targetFilename}`);
     var file = new File();
     file.path = targetFilename;
     file.contents = new Buffer(JSON.stringify(jsonResult, null, 2));
