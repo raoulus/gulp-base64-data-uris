@@ -1,8 +1,14 @@
-# convert images to datauris with gulp
+# gulp plugin example
+
+## convert images to datauris with gulp
 This plugin converts a set of images to base64 encoded datauris and combines them in a single json file.
+
+__Note:__ This is a demo of a gulp plugin and not published to any public repository.
+
 
 ## Usage
 ```javascript
+const convert = require('./index.js');
 gulp.task('convert', function() {
   return gulp.src('./images/*')
               .pipe(convert('images.json'))
