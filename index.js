@@ -10,17 +10,17 @@ module.exports = function(targetFilename) {
 
   var jsonResult = {};
 
-	return through.obj(function(file, enc, cb) {
+  return through.obj(function(file, enc, cb) {
 
     if (file.isNull()) {
-			cb(null, file);
-			return;
-		}
+      cb(null, file);
+      return;
+    }
 
-		if (file.isStream()) {
-			cb(new gutil.PluginError('MY_PLUGIN', 'Streaming not supported'));
-			return;
-		}
+    if (file.isStream()) {
+      cb(new gutil.PluginError('MY_PLUGIN', 'Streaming not supported'));
+      return;
+    }
 
     gutil.log(`processing ${file.relative}`);
     datauri.format(path.extname(file.relative), file.contents);
@@ -28,12 +28,12 @@ module.exports = function(targetFilename) {
 
     cb();
 
-	}, function (cb) {
-		gutil.log('image-converion done');
+  }, function(cb) {
+    gutil.log('image-converion done');
     var file = new File();
     file.path = targetFilename;
     file.contents = new Buffer(JSON.stringify(jsonResult, null, 2));
     this.push(file);
-		cb();
-	});
+    cb();
+  });
 };
