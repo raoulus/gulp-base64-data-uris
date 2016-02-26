@@ -1,0 +1,23 @@
+{
+  "name": "gulp-image-base64",
+  "version": "0.1.0",
+  "description": "This plugin converts a set of images to base64 encoded datauris and combines them in a single json file.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:raoulus/gulp-base64-data-uris.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "Raoul Jaeckel",
+  "license": "MIT",
+  "devDependencies": {
+    "datauri": "^1.0.4",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-sequence": "^0.4.5",
+    "gulp-util": "^3.0.7",
+    "through2-concurrent": "^1.1.0"
+  }
+}
